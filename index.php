@@ -15,6 +15,13 @@
           <td><button id="btnToggle">Start</button></td>
         </tr>
       </table>
+
+      <p></p>
+
+      <table border="1">
+        <th><td>Description</td><td>Start</td><td>Stop</td><td>Duration</td></th>
+        <div id=tableData>af</div>
+      </table>
     </div>
   </body>
 </html>

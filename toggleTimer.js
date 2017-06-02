@@ -1,4 +1,7 @@
 $(document).ready(function() {
+  var userId = 1;
+  loadUserTracks(userId);
+
   var togglOn = false;
   var timer;
   var startTime;
@@ -7,7 +10,6 @@ $(document).ready(function() {
     togglOn = !togglOn;
     toggleButtonText();
     toggleTimer();
-
   });
 
     function toggleTimer() {
@@ -36,8 +38,8 @@ $(document).ready(function() {
       var description = $("#inputDescription").val();
       $("#inputDescription").val("");
 
-      //sendData(description, startTime, stopTime, timer);
-      alert(description + ", " + startTime + ", " + stopTime + ", " + timer);
+      sendTrackData(userId, description, startTime, stopTime, timer);
+      //alert(description + ", " + startTime + ", " + stopTime + ", " + timer);
 
     }
 
@@ -49,8 +51,32 @@ $(document).ready(function() {
       }
     }
 
-    function sendData(description, startTime, stopTime, timer) {
+    function sendTrackData(userId, description, startTime, stopTime, timer) {
+      var data = "userId=" + userId + "&description=" + description + "&startTime=" + startTime + "&stopTime=" + stopTime + "&timer=" + timer;
+      alert(data);
 
+      $.ajax({
+        type: "POST",
+        url: "db/sendTrackData.php",
+        data: data,
+        success: function(data) {
+          alert(data);
+          //$("#something").html(data);
+        }
+      });
+    }
+
+    function loadUserTracks(userId) {
+      var data = "userId=" + userId;
+
+      $.ajax({
+        type: "POST",
+        url: "db/loadUserTracks.php",
+        data: data,
+        success: function(data) {
+          alert(data); //first echo everything an alert it, then figure out further
+        }
+      });
     }
 
 });
