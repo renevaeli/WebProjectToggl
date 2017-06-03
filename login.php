@@ -8,8 +8,8 @@
     <script src="js/functions.js"></script>
   </head>
   <body>
-    <div style="width: 200px; margin: auto;">
-      <h1>Log in</h1>
+    <div style="width: 200px; margin: auto;" align="center">
+      <h3>Log in</h3>
       <p>Please log in to your account</p>
       <p><div id="login_error"></div></p>
       <p><input id="inputUser" type="username" placeholder="Username"></p>

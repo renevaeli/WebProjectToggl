@@ -13,29 +13,7 @@
     $stopTime = $fetch['stopTime'];
     $timer = $fetch['timer'];
 
-    require "sendDataToTable.php";
+    require "writeTracksToTable.php";
   };
-
-
-
-  // if(!$userId) {
-  //   //echo "Something went wrong. Sorry about that.";
-  // }
-  // else {
-  //
-  // }
-
-  // $userId =
-  // $description =
-  // $startTime =
-  // $stopTime =
-  // $timer =
-
-  // else {
-  //   mysqli_query($con, "INSERT INTO `10163416_Toggl_2`(`userId`, `description`, `startTime`, `stopTime`, `timer`) VALUES ('$userId','$description','$startTime','$stopTime','$timer')");
-  //   $id = mysqli_insert_id($con);
-  //   echo "Thanks user $userId, your entry was: $id, $description, $startTime, $stopTime, $timer";
-  // }
-
 
 ?>

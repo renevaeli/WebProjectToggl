@@ -8,7 +8,7 @@
     <script src="js/registerUser.js"></script>
   </head>
   <body>
-    <div style="width: 200px; margin: auto;">
+    <div style="width: 200px; margin: auto;" align="center">
       <h3>Register</h3>
       <p>Use the form to register:</p>
       <!-- <p><div id="register_output"></div></p> -->
