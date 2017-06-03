@@ -1,19 +1,21 @@
 <?php
   $userId = !empty($_POST['userId']) ? $_POST['userId'] : '';
-  echo "userId is: $userId and query result is ";
+  //echo "userId is: $userId. query result: ";
 
-  $con = mysqli_connect("localhost", "test", "t3st3r123", "test");
+  require "connectDb.php";
 
-  $query = mysqli_query($con, "SELECT `id`, `description` FROM `10163416_Toggl_2` WHERE `userId`='$userId'");
+  $query = mysqli_query($con, "SELECT `id`, `description`, `startTime`, `stopTime`, `timer` FROM `10163416_Toggl_2` WHERE `userId`='$userId'");
+
   while($fetch = mysqli_fetch_assoc($query)){
     $id = $fetch['id'];
     $description = $fetch['description'];
+    $startTime = $fetch['startTime'];
+    $stopTime = $fetch['stopTime'];
+    $timer = $fetch['timer'];
 
-    echo "id is $id and description is $description";
+    require "sendDataToTable.php";
   };
 
-    $id = $fetch['id'];
-    $description = $fetch['description'];
 
 
   // if(!$userId) {

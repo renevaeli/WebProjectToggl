@@ -35,7 +35,7 @@ $(document).ready(function() {
     function stopTimer() {
       $("#timer").html("00:00:00");
       var stopTime = Date.now();
-      var description = $("#inputDescription").val();
+      var description = strip($("#inputDescription").val());
       $("#inputDescription").val("");
 
       sendTrackData(userId, description, startTime, stopTime, timer);
@@ -53,7 +53,7 @@ $(document).ready(function() {
 
     function sendTrackData(userId, description, startTime, stopTime, timer) {
       var data = "userId=" + userId + "&description=" + description + "&startTime=" + startTime + "&stopTime=" + stopTime + "&timer=" + timer;
-      alert(data);
+      //alert(data);
 
       $.ajax({
         type: "POST",
@@ -61,7 +61,7 @@ $(document).ready(function() {
         data: data,
         success: function(data) {
           alert(data);
-          //$("#something").html(data);
+          $("#trackData").append(data);
         }
       });
     }
@@ -74,9 +74,17 @@ $(document).ready(function() {
         url: "db/loadUserTracks.php",
         data: data,
         success: function(data) {
-          alert(data); //first echo everything an alert it, then figure out further
+          //$("#test").html(data);
+          $("#trackData").append(data);
         }
       });
+    }
+
+    function strip(html)
+    {
+       var tmp = document.createElement("DIV");
+       tmp.innerHTML = html;
+       return tmp.textContent || tmp.innerText || "";
     }
 
 });
