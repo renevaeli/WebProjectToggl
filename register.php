@@ -9,17 +9,20 @@
     <script src="js/registerUser.js"></script>
   </head>
   <body>
-    <!-- Header -->
-    <div class="w3-container w3-black w3-center">
-      <h2>Toggl: Register</h2>
-    </div>
+    <div class="w3-container">
+      <!-- Header -->
+      <div class="w3-container w3-black w3-center">
+        <h2>Toggl: Register</h2>
+      </div>
 
-    <!-- Register input -->
-    <div style="width: 300px; margin: auto;" align="center">
-      <p><input class="w3-input" id="inputNewUser" type="text" placeholder="Username"></p>
-      <p><input class="w3-input" id="inputNewPass1" type="password" placeholder="Password"></p>
-      <p><input class="w3-input" id="inputNewPass2" type="password" placeholder="Retype Password"></p>
-      <p><button class="w3-button w3-bar w3-red" id="btnRegister">Register</button></p>
+      <!-- Register input -->
+      <div style="width: 300px; margin: auto;" align="center">
+        <p><input class="w3-input" id="inputNewUser" type="text" placeholder="Username"></p>
+        <p><input class="w3-input" id="inputNewPass1" type="password" placeholder="Password"></p>
+        <p><input class="w3-input" id="inputNewPass2" type="password" placeholder="Retype Password"></p>
+        <p><button class="w3-button w3-bar w3-red" id="btnRegister">Register</button></p>
+        <p><a href="login.php"><button class="w3-button w3-bar w3-gray">Back to Login</button></a></p>
+      </div>
     </div>
   </body>
 

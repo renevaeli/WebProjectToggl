@@ -36,23 +36,19 @@
         </div>
       </div>
 
-      <!-- <table>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </table>
-      <p></p> -->
-
       <!-- Tracks table -->
-      <table class="w3-table-all w3-hoverable">
+      <table class="w3-table-all w3-hoverable" id="trackData">
+          <tr class="w3-light-grey" style="font-weight: bold"><td>Description</td><td>Start</td><td>Stop</td><td>Duration</td></tr>
+      </table>
+
+      <!-- <table class="w3-table-all w3-hoverable">
         <thead>
-          <tr class="w3-light-grey"><td>Description</td><td>Start</td><td>Stop</td><td>Duration</td></tr>
+          <tr class="w3-light-grey" style="font-weight: bold"><td>Description</td><td>Start</td><td>Stop</td><td>Duration</td></tr>
         </thead>
         <tbody id="trackData">
         </tbody>
-      </table>
+      </table> -->
+
     </div>
   </body>
 </html>

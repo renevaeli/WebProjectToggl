@@ -28,11 +28,6 @@ $(document).ready(function() {
     });
   });
 
-  $("#btnGoToRegister").click(function() {
-    //alert("registerclick");
-    window.location.href="register.php";
-  });
-
   function checkUserInput(user, pass) {
     if (user == "" || pass == "") {
       alert("All fields required!");
