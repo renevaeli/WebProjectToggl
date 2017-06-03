@@ -12,8 +12,8 @@
       <h1>Log in</h1>
       <p>Please log in to your account</p>
       <p><div id="login_error"></div></p>
-      <p><input id="username" type="username" placeholder="Username"></p>
-      <p><input id="password" type="password" placeholder="Password"></p>
+      <p><input id="inputUser" type="username" placeholder="Username"></p>
+      <p><input id="inputPass" type="password" placeholder="Password"></p>
       <p><button id="btnLogin">Log in</button></p>
       <p><button id="btnGoToRegister">Register</button></p>
     <div>

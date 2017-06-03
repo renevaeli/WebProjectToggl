@@ -8,7 +8,9 @@
     <script src="js/functions.js"></script>
   </head>
   <body>
-    <div style="width: 600px; margin: auto;">
+    <div style="width: 600px; margin: auto;" align="center">
+      <div align="right"><button id="btnLogOut">Log Out</button></div>
+      <p></p>
       <table>
         <tr>
           <td><input type=text id="inputDescription" placeholder="Description"></td>
@@ -16,9 +18,7 @@
           <td><button id="btnToggle">Start</button></td>
         </tr>
       </table>
-
-      <!-- <p id="test"></p> -->
-
+      <p></p>
       <table border="1">
         <thead>
           <tr><td>Description</td><td>Start</td><td>Stop</td><td>Duration</td></tr>

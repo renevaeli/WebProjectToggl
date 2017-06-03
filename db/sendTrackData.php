@@ -21,7 +21,7 @@
   }
   else {
     mysqli_query($con, "INSERT INTO `10163416_Toggl_2`(`userId`, `description`, `startTime`, `stopTime`, `timer`) VALUES ('$userId','$description','$startTime','$stopTime','$timer')");
-    $id = mysqli_insert_id($con);
+    //$id = mysqli_insert_id($con);
     require "sendDataToTable.php";
   }
 

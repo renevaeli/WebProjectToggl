@@ -1,29 +1,35 @@
 $(document).ready(function() {
 
   $("#btnLogin").click(function() {
-    var user = strip($("#username").val());
-    var pass = strip($("#password").val());
+    var user = strip($("#inputUser").val());
+    var pass = strip($("#inputPass").val());
 
-    //PERFORM LOGIN CHECKS
-    //check html
-    //check if neither empty
-
-
-
-    var data = "user=" + user + "&pass=" + pass;
+    var data = checkUserInput(user, pass);
+    if (data == undefined) {
+      return;
+    }
+    //alert(data);
 
     $.ajax({
       type: "POST",
-      url: "loginDataDb.php",
+      url: "db/loginDataDb.php",
       data: data,
       success: function(data) {
-
+        //alert(data);
+        if (data == "Success") {
+          alert("Login successful. Directing to Toggl.")
+          window.location.href="timer.php";
+        }
+        else {
+          alert(data);
+          clearFields();
+        }
       }
     });
   });
 
   $("#btnGoToRegister").click(function() {
-    alert("registerclick");
+    //alert("registerclick");
     window.location.href="register.php";
   });
 
@@ -32,15 +38,12 @@ $(document).ready(function() {
       alert("All fields required!");
       clearFields();
     }
-    else if (pass1 !== pass2) {
-      alert("Passwords don't match!");
-      clearFields();
-    }
     else {
-      alert("got here");
-      var data = 'user=' + user + '&pass=' + pass1;
+      //alert("got here");
+      var data = 'user=' + user + '&pass=' + pass;
       return data;
     }
+  }
 
   function strip(html) {
      var tmp = document.createElement("DIV");

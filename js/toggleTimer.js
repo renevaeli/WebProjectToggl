@@ -1,6 +1,21 @@
 $(document).ready(function() {
-  var userId = 1;
-  loadUserTracks(userId);
+  var userId;
+
+  getUserId();
+
+  function getUserId() {
+    $.ajax({
+      url: "db/session.php",
+      success: function(data) {
+        userId = data;
+        loadUserTracks(userId);
+      }
+    });
+  }
+
+  $("#btnLogOut").click(function() {
+    //log out
+  });
 
   var togglOn = false;
   var timer;
@@ -11,6 +26,10 @@ $(document).ready(function() {
     toggleButtonText();
     toggleTimer();
   });
+
+    function getSessionId() {
+
+    }
 
     function toggleTimer() {
       if (!togglOn) {
@@ -60,7 +79,7 @@ $(document).ready(function() {
         url: "db/sendTrackData.php",
         data: data,
         success: function(data) {
-          alert(data);
+          //alert(data);
           $("#trackData").append(data);
         }
       });
@@ -86,5 +105,6 @@ $(document).ready(function() {
        tmp.innerHTML = html;
        return tmp.textContent || tmp.innerText || "";
     }
+
 
 });

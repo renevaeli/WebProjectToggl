@@ -15,14 +15,15 @@ $(document).ready(function() {
     if (data == undefined) {
       return;
     }
-    alert(data);
+    //alert(data);
 
     $.ajax({
         type: "POST",
         url: "db/registerDb.php",
         data: data,
         success: function(data) {
-          if (data = "Success") {
+          //alert(data);
+          if (data == "Success") {
             alert("Registration successful, please log in.")
             window.location.href="login.php";
           }
@@ -44,7 +45,7 @@ $(document).ready(function() {
       clearFields();
     }
     else {
-      alert("got here");
+      //alert("got here");
       var data = 'user=' + user + '&pass=' + pass1;
       return data;
     }
