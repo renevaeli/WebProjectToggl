@@ -1,25 +1,14 @@
 $(document).ready(function() {
   var userId;
-
-  getUserId();
-
-  function getUserId() {
-    $.ajax({
-      url: "db/session.php",
-      success: function(data) {
-        userId = data;
-        loadUserTracks(userId);
-      }
-    });
-  }
-
-  $("#btnLogOut").click(function() {
-    //log out
-  });
-
   var togglOn = false;
   var timer;
   var startTime;
+
+  getUserId();
+
+  $("#btnLogOut").click(function() {
+    endSession();
+  });
 
   $("#btnToggle").click(function() {
     togglOn = !togglOn;
@@ -27,9 +16,29 @@ $(document).ready(function() {
     toggleTimer();
   });
 
-    function getSessionId() {
+  function getUserId() {
+    $.ajax({
+      type: "POST",
+      url: "db/session.php",
+      data: { post: "Start" },
+      success: function(data) {
+        userId = data;
+        loadUserTracks(userId);
+      }
+    });
+  }
 
-    }
+  function endSession() {
+    $.ajax({
+      type: "POST",
+      url: "db/session.php",
+      data: { post: "Stop" },
+      success: function(data) {
+        alert(data);
+        window.location.href="login.php";
+      }
+    });
+  }
 
     function toggleTimer() {
       if (!togglOn) {
