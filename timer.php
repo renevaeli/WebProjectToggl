@@ -23,15 +23,15 @@
 
       <!-- Timer -->
       <div class="w3-row-padding w3-padding-16">
-        <div class="w3-container w3-threequarter">
+        <div class="w3-container w3-half">
           <input class="w3-input" type=text id="inputDescription" placeholder="Description">
         </div>
-        <div class="w3-container w3-quarter">
+        <div class="w3-container w3-half">
           <div class="w3-container w3-half">
             <h3 class="w3-right" id="timer">00:00:00</h3>
           </div>
           <div class="w3-container w3-half">
-            <button class="w3-button w3-red" id="btnToggle">Start</button>
+            <button class="w3-button w3-red w3-right" id="btnToggle">Start</button>
           </div>
         </div>
       </div>
